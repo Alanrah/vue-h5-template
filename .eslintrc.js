@@ -1,14 +1,37 @@
 const { resolve } = require('path');
+
 module.exports = {
+    env: {
+        browser: true,
+        es2021: true
+    },
+    extends: [
+        // 'plugin:vue/vue3-essential',
+        // 'standard-with-typescript',
+    ],
+    overrides: [
+    ],
     parserOptions: {
+        ecmaVersion: 'latest',
         extraFileExtensions: ['.vue'],
         parser: '@typescript-eslint/parser',
         project: resolve(__dirname, './tsconfig.json'),
         tsconfigRootDir: __dirname,
-        ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-        sourceType: 'module', // Allows for the use of imports
+        sourceType: 'module' // Allows for the use of imports
     },
+    plugins: [
+        'vue'
+    ],
     rules: {
-        '@typescript-eslint/no-unsafe-call': 'off',
-    },
+        quotes: ['warn', 'single', { avoidEscape: true }],
+        indent: ['error', 4],
+        semi: ['error', 'always'],
+        'comma-dangle': ['error', {
+            'arrays': 'never',
+            'objects': 'never',
+            'imports': 'never',
+            'exports': 'never',
+            'functions': 'never'
+        }]
+    }
 };

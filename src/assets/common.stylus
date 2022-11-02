@@ -1,0 +1,173 @@
+// 移动端公用样式
+
+@font-face
+    font-family HYe0gj
+    src url('https://yfb-juna.oss-cn-shanghai.aliyuncs.com/font/HYChaoCuYuanJ.ttf')
+    font-weight normal
+    font-style normal
+
+@font-face
+    font-family HYZhongHei-J
+    src url('https://yfb-juna.oss-cn-shanghai.aliyuncs.com/font/HYZhongHeiJ.ttf')
+    font-weight normal
+    font-style normal
+
+@font-face
+    font-family FZTYSJW--GB1-0
+    src url('https://yfb-juna.oss-cn-shanghai.aliyuncs.com/font/FZTYSJ.ttf')
+    font-weight normal
+    font-style normal
+@font-face
+    font-family HYi4gj
+    src url('https://yfb-juna.oss-cn-shanghai.aliyuncs.com/font/HYXueJunTiJ.ttf')
+    font-weight normal
+    font-style normal
+.full-screen
+    width 100vw
+    height 100vh
+.app-flex-center
+    display: flex
+    align-items: center
+    justify-content: center
+.app-form
+    display flex
+.app-form-required
+    color var(--app-danger-color)
+.app-button-text-space
+    margin-right 50rpx
+.app-register
+    .van-cell
+        height 44rpx
+        width: 340rpx;
+        font-size: 14rpx
+        padding: 10rpx 16rpx
+        border-bottom 1px solid #E3E4E5
+    .van-cell::after
+        border none
+    .van-field__label
+        color #858597
+        width 100rpx
+    .van-cell--required::before
+        color var(--app-danger-color)
+        margin-right 4rpx
+        width 11rpx
+    .van-field__control::placeholder
+        color: rgba(0, 0, 0, 0.16);
+    .van-field--error .van-field__control, .van-field--error .van-field__control::placeholder
+        color var(--app-danger-color)
+    .sms
+        color: rgba(0, 0, 0, 0.3)
+        font-size: 14rpx;
+        border none
+        background-color #fff
+.app-button-primary
+    width: 323rpx !important
+    height 46rpx !important
+    line-height: 46rpx !important
+    border-radius: 45rpx !important
+    background-color: var(--app-main-color) !important
+    color #fff !important
+    font-size: 20rpx !important
+    font-family: HYZhongHei-J;
+    .van-button__content
+        height 45rpx
+.van-dropdown-item__option--active
+    color: var(--app-main-color) !important
+.van-dropdown-item__icon
+    color: var(--app-main-color) !important
+.van-dropdown-item
+    .van-cell__title
+        flex none
+        span
+            width 300rpx
+    .van-cell__value
+        width 50rpx
+.font-8
+    display: flex;
+    align-items: center;
+    justify-content center
+    border-radius: 5rpx;
+    background: #E0EAFF
+    font-size:12rpx;
+    transform:scale(0.84);
+.font-12
+    display: flex;
+    align-items: center;
+    justify-content center
+    border-radius: 5rpx;
+    background: #E0EAFF
+    font-size:12rpx;
+.app-dialog
+    .van-dialog__confirm
+        background: var(--app-main-color);
+        color #fff
+        font-size 20rpx
+    .van-dialog__message
+        color: rgba(0, 0, 0, 0.65);
+        font-size 20rpx
+        line-height 22rpx
+    .follow-gzh
+        .follow-gzh-desc
+            font-size 16rpx
+            margin-bottom 20rpx
+        .follow-gzh-gzh
+            width: 150rpx;
+            height: 150rpx;
+            margin 10rpx auto
+    .role-message
+        font-family: HYZhongHei-J;
+        font-size: 13rpx;
+        font-weight: normal;
+        line-height: 20rpx;
+        color: rgba(0, 0, 0, 0.65);
+        text-align left
+        &:before
+            display inline-block
+            content ''
+            width: 6rpx;
+            height: 6rpx;
+            background: #FF8F1F;
+            border-radius 50%
+            margin-right 8rpx
+    .paper-desc
+        text-align left
+        font-family: HYZhongHei-J;
+        font-size: 15rpx;
+        font-weight: normal;
+        line-height: 20rpx;
+        letter-spacing: 0px;
+        color: #3351EB;
+        margin-bottom 30rpx
+        .paper-desc-option
+            color: #FFB128;
+        .paper-desc-text
+            color: #3351EB;
+// pc端公用样式
+.web-form
+    display flex
+
+multiline-ellipsis(count)
+    overflow hidden
+    display -webkit-box
+    -webkit-line-clamp count
+    -webkit-box-orient vertical
+
+singleline-ellipsis()
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
+
+text-ellipsis(max-width = 100%)
+    max-width max-width
+    white-space nowrap
+    word-wrap normal
+    overflow hidden
+    text-overflow ellipsis
+    display inline-block
+
+.pc-dialog
+    .pc-dialog-section-desc
+        display: flex
+        justify-content space-between
+        margin 20px 40px
+
