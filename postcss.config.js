@@ -9,16 +9,16 @@ module.exports = {
             viewportWidth: 375,
             unitPrecision: 4,
             viewportUnit: 'vw',
-            fontViewportUnit: 'vw' // vmin is more suitable.
+            fontViewportUnit: 'vw', // vmin is more suitable.
         }),
-        isProduction
-            && require('cssnano')({
+        isProduction &&
+            require('cssnano')({
                 preset: [
                     'default',
                     {
-                        mergeLonghand: false
-                    }
-                ]
-            })
-    ].filter(v=> v)
+                        mergeLonghand: false,
+                    },
+                ],
+            }),
+    ].filter((v) => v),
 };

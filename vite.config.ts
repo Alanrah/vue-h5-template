@@ -17,10 +17,10 @@ export default defineConfig({
         vue2Jsx(),
         legacy({
             targets: ['ie >= 11'],
-            additionalLegacyPolyfills: ['regenerator-runtime/runtime']
+            additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
         }),
         Components({
-            resolvers: [VantResolver()]
+            resolvers: [VantResolver()],
         }),
         viteVConsole({
             entry: resolve(__dirname, './src/main.ts'), // entry file
@@ -29,21 +29,21 @@ export default defineConfig({
             config: {
                 // vconsole options
                 maxLogNumber: 1000,
-                theme: 'light'
-            }
-        })
+                theme: 'light',
+            },
+        }),
     ],
     resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
+            '@': fileURLToPath(new URL('./src', import.meta.url)),
+        },
     },
     server: {
         proxy: {
             '/api': {
                 target: 'http://dev.com.cn',
-                changeOrigin: true
-            }
-        }
-    }
+                changeOrigin: true,
+            },
+        },
+    },
 });

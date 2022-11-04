@@ -30,10 +30,10 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
-import { PhoneReg } from '@/utils/reg';
 import { Toast } from 'vant';
+import { PhoneReg } from '@/utils/reg';
 import { getCaptcha } from '@/services/register';
-import { useUserStore, isMobileLogin } from '@/stores/user';
+import { useUserStore } from '@/stores/user';
 import { useRouter } from '@/router';
 
 const router = useRouter();

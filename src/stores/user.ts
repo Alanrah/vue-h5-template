@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
+import { ref } from 'vue';
 import { request } from '@/services/axios';
-import { ref } from 'vue'
 
 export const isMobileLogin = ref(false);
 export const useUserStore = defineStore({
@@ -14,8 +14,8 @@ export const useUserStore = defineStore({
     actions: {
         initUserState (user: any) {
             this.mobile = user.mobile || '';
-      this.nickname = user.nickname || '';
-    },
+            this.nickname = user.nickname || '';
+        },
 
         async getUserInfo () {
             const res: any = await request.get('/api/1.0/auth/check/token');
@@ -28,19 +28,19 @@ export const useUserStore = defineStore({
             const res: any = await request.post('/api/1.0/auth/front', params);
             if (res.code === 200) {
                 this.isLogin = true;
-        isMobileLogin.value = true;
-        // @ts-ignore
-        request.defaults.headers = { Authorization: `${res.data.token}` };
+                isMobileLogin.value = true;
+                // @ts-ignore
+                request.defaults.headers = { Authorization: `${res.data.token}` };
                 this.initUserState(res.data);
-      }
+            }
             return res;
-    },
+        },
         async checkToken () {
             const res: any = await request.get('/api/1.0/auth/check/token');
             if (res.code === 200) {
                 this.isLogin = true;
-        isMobileLogin.value = true;
-        this.initUserState(res.data);
+                isMobileLogin.value = true;
+                this.initUserState(res.data);
             }
         },
     },

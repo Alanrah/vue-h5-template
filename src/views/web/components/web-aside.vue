@@ -20,10 +20,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useRouter, useRoute } from '@/router';
+import { useRoute } from '@/router';
 
 const route = useRoute();
-const router = useRouter();
 
 const defaultActive = computed(() => {
     return route.path.slice(9) || '/pc/user';

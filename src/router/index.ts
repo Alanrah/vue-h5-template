@@ -9,7 +9,7 @@ const router = new VueRouter({
     mode: 'history',
     base: CURR_prefix,
     routes: [
-    // pc web 的 routes
+        // pc web 的 routes
         {
             path: '/pc',
             name: 'pcHome',
@@ -21,38 +21,38 @@ const router = new VueRouter({
                 {
                     path: 'login',
                     name: 'pcLogin',
-                    component: async () => await import('@/views/web/login.vue')
-                }
-
-            ]
+                    component: async () => await import('@/views/web/login.vue'),
+                },
+            ],
         },
         // 移动端 app 的routes
         {
             path: '/mobile',
             name: 'app',
             component: async () => await import('@/views/app/index.vue'),
-            children: [{
-                path: 'login', // 登录
-                name: 'mobileLogin',
-                component: async () => await import('@/views/app/login/index.vue')
-            },
+            children: [
+                {
+                    path: 'login', // 登录
+                    name: 'mobileLogin',
+                    component: async () => await import('@/views/app/login/index.vue'),
+                },
 
-            {
-                path: 'register', // 个人中心-编辑信息
-                name: 'register',
-                component: async () => await import('@/views/app/register/index.vue')
-            }
-            ]
+                {
+                    path: 'register',
+                    name: 'register',
+                    component: async () => await import('@/views/app/register/index.vue'),
+                },
+            ],
         },
         {
             path: '*', // 404
             name: 'notFound',
             component: async () => await import('@/views/app/components/not-found.vue'),
             meta: {
-                title: '该页面不存在'
-            }
-        }
-    ]
+                title: '该页面不存在',
+            },
+        },
+    ],
 });
 
 router.beforeEach(async (to, from, next) => {
@@ -62,7 +62,7 @@ router.beforeEach(async (to, from, next) => {
         } else {
             next({
                 name: 'pcLogin',
-                replace: true
+                replace: true,
             });
         }
         return;
@@ -71,10 +71,10 @@ router.beforeEach(async (to, from, next) => {
 });
 export default router;
 
-export function useRouter () {
+export function useRouter() {
     return router;
 }
 
-export function useRoute () {
+export function useRoute() {
     return router.currentRoute;
 }

@@ -39,11 +39,10 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, onBeforeMount, computed, watch, ref } from 'vue';
+import { reactive } from 'vue';
 import { Toast } from 'vant';
-import { PhoneReg, idReg } from '@/utils/reg';
-import { useRouter, useRoute } from '@/router';
-import { imgToBase64, loadImage, imageValidator } from '@/utils/image';
+import { PhoneReg } from '@/utils/reg';
+import { useRouter } from '@/router';
 import { useUserStore, isMobileLogin } from '@/stores/user';
 import { submitRegister, getCaptcha } from '@/services/register';
 import { request } from '@/services/axios';

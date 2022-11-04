@@ -24,10 +24,10 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, onBeforeMount, onMounted, computed } from 'vue';
-import { useRouter, useRoute } from '@/router';
-import { usePCLoginStore } from '@/stores/pc-login';
+import { reactive } from 'vue';
 import { Message } from 'element-ui';
+import { useRouter } from '@/router';
+import { usePCLoginStore } from '@/stores/pc-login';
 
 const loginStore = usePCLoginStore();
 const router = useRouter();

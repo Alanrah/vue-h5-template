@@ -8,10 +8,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { reactive, onBeforeMount, onMounted, computed } from 'vue';
-import { useRouter, useRoute } from '@/router';
 import { usePCLoginStore } from '@/stores/pc-login';
-import { Message } from 'element-ui';
 
 const loginStore = usePCLoginStore();
 

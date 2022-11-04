@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { AXIOS_BASE_URL } from '@/utils/const';
 import { Toast } from 'vant';
+import { AXIOS_BASE_URL } from '@/utils/const';
 import { getCookie } from '@/utils/cookie';
 
 export const request = axios.create({
@@ -8,13 +8,13 @@ export const request = axios.create({
     withCredentials: true,
     baseURL: AXIOS_BASE_URL,
     headers: {
-        Authorization: getCookie('authorization')
-    }
+        Authorization: getCookie('authorization'),
+    },
 });
-request.interceptors.response.use(res => {
+request.interceptors.response.use((res) => {
     const data = res.data;
-  if (data.code === 401) {
+    if (data.code === 401) {
         Toast('未登录，请重新登录');
-  }
+    }
     return data;
-})
+});

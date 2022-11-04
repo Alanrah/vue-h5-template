@@ -25,9 +25,10 @@ import {
     Option,
     Form,
     FormItem,
-    Checkbox
+    Checkbox,
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import { Empty } from 'vant';
 
 import App from './App.vue';
 import router from './router';
@@ -35,7 +36,6 @@ import router from './router';
 import './assets/main.css';
 import './assets/common.stylus';
 
-import { Empty } from 'vant';
 import 'vant/es/toast/style';
 import 'vant/es/dialog/style';
 
@@ -78,5 +78,5 @@ Vue.use(PiniaVuePlugin);
 new Vue({
     router,
     pinia: createPinia(),
-    render: (h) => h(App)
+    render: (h) => h(App),
 }).$mount('#app');
